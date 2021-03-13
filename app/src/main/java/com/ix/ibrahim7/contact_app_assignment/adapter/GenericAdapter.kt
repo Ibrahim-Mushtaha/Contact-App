@@ -18,7 +18,6 @@ class GenericAdapter<T>(@LayoutRes val layoutId: Int, var type:Int, val itemclic
     fun addItems(items: List<T>) {
         this.data.clear()
         this.data.addAll(items)
-        notifyDataSetChanged()
     }
 
 
