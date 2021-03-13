@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.ix.ibrahim7.contact_app_assignment.BR
@@ -72,6 +73,24 @@ class ListUserFragment : Fragment(), AddUserDialog.onClickListener,GenericAdapte
             }
         })
 
+        viewModel.AddUserLiveData().observe(viewLifecycleOwner, Observer {response ->
+            when (response) {
+                is Resource.Success -> {
+                    if (dialog.isAdded)
+                        dialog.dismiss()
+                    toastMessage("User added successfully")
+                }
+                is Resource.Error -> {
+                    if (dialog.isAdded)
+                        dialog.dismiss()
+                    toastMessage(response.message.toString())
+                }
+                is Resource.Loading -> {
+                    dialog.show(childFragmentManager, "")
+                }
+            }
+        })
+
 
         mBinding.fabAdd.setOnClickListener {
             AddUserDialog(this).show(childFragmentManager,"")
@@ -80,9 +99,13 @@ class ListUserFragment : Fragment(), AddUserDialog.onClickListener,GenericAdapte
 
     }
 
-    // dialog listener
-    override fun onClick(type: Boolean) {
+    private fun toastMessage(message:String){
+        Toast.makeText(requireContext(),message,Toast.LENGTH_SHORT).show()
+    }
 
+    // dialog listener
+    override fun onClick(type: Boolean,user: User) {
+        if (type)  dialog.show(childFragmentManager, ""); viewModel.addUser(user)
     }
 
     // recycler listener

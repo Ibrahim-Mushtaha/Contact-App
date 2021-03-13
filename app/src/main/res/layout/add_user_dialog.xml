@@ -90,12 +90,12 @@
             app:layout_constraintTop_toBottomOf="@+id/etxt_Group_Contanier">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etxtWeight"
+                android:id="@+id/etxtPhone"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:inputType="phone"
                 android:maxLines="1"
-                android:imeOptions="actionDone"
+                android:imeOptions="actionNext"
                 android:textColor="@color/black"
                 android:backgroundTint="#F9F9F9"
                 android:textColorHint="@color/black"

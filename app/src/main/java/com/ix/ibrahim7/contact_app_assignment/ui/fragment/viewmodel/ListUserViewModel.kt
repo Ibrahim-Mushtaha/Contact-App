@@ -16,6 +16,7 @@ class ListUserViewModel (private val repository: MainRepository = MainRepository
     fun addUser(user: User) = GlobalScope.launch(dispatcher) { repository.addUser(user) }
 
     fun getUserLiveData() = repository.UserLiveData
+    fun AddUserLiveData() = repository.AddUserLiveData
 
 
     init {

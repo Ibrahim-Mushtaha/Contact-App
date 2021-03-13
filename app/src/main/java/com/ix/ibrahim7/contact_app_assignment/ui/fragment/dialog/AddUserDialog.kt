@@ -3,21 +3,20 @@ package com.ix.ibrahim7.contact_app_assignment.ui.fragment.dialog
 
 import android.net.Uri
 import android.os.Bundle
+import android.text.TextUtils
 import android.util.Log
 import android.view.*
+import android.widget.EditText
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.google.firebase.installations.Utils
 import com.ix.ibrahim7.contact_app_assignment.databinding.AddUserDialogBinding
+import com.ix.ibrahim7.contact_app_assignment.model.User
 import com.ix.ibrahim7.contact_app_assignment.ui.fragment.viewmodel.ListUserViewModel
 
 class AddUserDialog(val onGo: onClickListener) : BottomSheetDialogFragment(){
 
     private lateinit var mBinding: AddUserDialogBinding
-
-    private val viewModel by lazy {
-        ViewModelProvider(this)[ListUserViewModel::class.java]
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -39,12 +38,33 @@ class AddUserDialog(val onGo: onClickListener) : BottomSheetDialogFragment(){
         mBinding.apply {
 
             btnCreate.setOnClickListener {
-                onGo.onClick(true)
+                when{
+                    TextUtils.isEmpty(mBinding.etxtUsername.text) -> {
+                        validationData(mBinding.etxtUsername)
+                    }
+                    TextUtils.isEmpty(mBinding.etxtPhone.text) -> {
+                        validationData(mBinding.etxtPhone)
+                    }
+                    TextUtils.isEmpty(mBinding.etxtAbout.text) -> {
+                        validationData(mBinding.etxtAbout)
+                    }
+                    else->{
+                        onGo.onClick(true,User(mBinding.etxtUsername.text.toString(),mBinding.etxtPhone.text.toString()
+                        ,mBinding.etxtAbout.text.toString()))
+                        dismiss()
+                    }
+                }
             }
 
         }
 
 
+    }
+
+    private fun validationData(view: EditText) {
+        view.error =
+            "Required field"
+        view.requestFocus()
     }
 
     override fun onStart() {
@@ -56,7 +76,7 @@ class AddUserDialog(val onGo: onClickListener) : BottomSheetDialogFragment(){
     }
 
     interface onClickListener {
-        fun onClick(type:Boolean)
+        fun onClick(type:Boolean,user:User)
     }
 
 
