@@ -13,7 +13,7 @@
         tools:context=".ui.fragment.ListUserFragment">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycleView"
+            android:id="@+id/rcUserList"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:orientation="vertical"
@@ -27,7 +27,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/purple_700"
-            android:src="@drawable/baseline_add_white_18dp"
+            android:src="@drawable/ic_baseline_add_white_18dp"
             app:tint="@color/white"
             app:borderWidth="0dp"
             android:layout_margin="16sp"

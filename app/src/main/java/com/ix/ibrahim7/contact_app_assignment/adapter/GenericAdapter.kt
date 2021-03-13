@@ -33,7 +33,6 @@ class GenericAdapter<T>(@LayoutRes val layoutId: Int, var type:Int, val itemclic
 
     override fun onBindViewHolder(holder: GenericViewHolder<T>, position: Int) {
         val itemViewModel= data[position]
-        Log.e("eee data",itemViewModel.toString())
         holder.bind(itemViewModel,type)
         holder.itemView.apply {
             setOnClickListener {

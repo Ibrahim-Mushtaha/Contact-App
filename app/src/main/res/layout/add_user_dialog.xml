@@ -76,7 +76,7 @@
             android:layout_height="65dp"
             android:layout_marginTop="8sp"
             android:layout_marginEnd="16sp"
-            android:hint="Weight"
+            android:hint="Phone"
             android:textColorHint="@color/black"
             app:boxStrokeColor="@color/box_color"
             app:boxCornerRadiusBottomEnd="4dp"
@@ -90,14 +90,50 @@
             app:layout_constraintTop_toBottomOf="@+id/etxt_Group_Contanier">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etxt_Weight"
+                android:id="@+id/etxtWeight"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:inputType="numberDecimal"
+                android:inputType="phone"
                 android:maxLines="1"
                 android:imeOptions="actionDone"
                 android:textColor="@color/black"
                 android:backgroundTint="#F9F9F9"
+                android:textColorHint="@color/black"
+                android:textCursorDrawable="@drawable/shape_curser" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/etxt_Contanier3"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="100sp"
+            android:layout_marginTop="8sp"
+            android:layout_marginEnd="16sp"
+            android:hint="About User"
+            android:textColorHint="@color/black"
+            app:boxStrokeColor="@color/box_color"
+            app:boxCornerRadiusBottomEnd="4dp"
+            app:boxCornerRadiusBottomStart="4dp"
+            app:boxCornerRadiusTopEnd="4dp"
+            app:boxCornerRadiusTopStart="4dp"
+            app:hintTextColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/etxt_Contanier2"
+            app:layout_constraintTop_toBottomOf="@+id/etxt_Contanier2">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etxtAbout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:backgroundTint="#F9F9F9"
+                android:imeOptions="actionDone"
+                android:inputType="text"
+                android:maxLines="2"
+                android:gravity="start"
+                android:lines="2"
+                android:textColor="@color/black"
                 android:textColorHint="@color/black"
                 android:textCursorDrawable="@drawable/shape_curser" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -121,7 +157,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etxt_Contanier2" />
+            app:layout_constraintTop_toBottomOf="@+id/etxt_Contanier3" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
