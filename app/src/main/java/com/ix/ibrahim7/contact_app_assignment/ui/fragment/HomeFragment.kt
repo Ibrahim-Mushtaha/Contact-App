@@ -17,8 +17,8 @@ class HomeFragment : Fragment(),GenericAdapter.OnListItemViewClickListener<Categ
 
     private lateinit var mBinding: FragmentHomeBinding
 
-    private val userAdapter by lazy {
-        GenericAdapter(R.layout.item_category, BR.user,this)
+    private val categoryAdapter by lazy {
+        GenericAdapter(R.layout.item_category, BR.category,this)
     }
 
     override fun onCreateView(
@@ -34,8 +34,16 @@ class HomeFragment : Fragment(),GenericAdapter.OnListItemViewClickListener<Categ
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
+        mBinding.apply {
+            rcCategoryList.adapter = categoryAdapter
+        }
 
 
+        categoryAdapter.data.clear()
+        categoryAdapter.data.add(Category("Food",R.drawable.ic_food_category))
+        categoryAdapter.data.add(Category("Tool's",R.drawable.ic_tools_category))
+        categoryAdapter.data.add(Category("Technology",R.drawable.ic_game_category))
+        categoryAdapter.notifyDataSetChanged()
 
         super.onViewCreated(view, savedInstanceState)
     }
