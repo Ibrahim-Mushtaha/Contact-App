@@ -2,6 +2,7 @@ package com.ix.ibrahim7.contact_app_assignment.ui.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.google.firebase.analytics.FirebaseAnalytics
 import com.ix.ibrahim7.contact_app_assignment.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -15,7 +16,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(mBinding.root)
 
         setSupportActionBar(mBinding.toolbar)
-
+        FirebaseAnalytics.getInstance(this)
 
 
     }
