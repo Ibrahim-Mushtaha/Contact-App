@@ -1,7 +1,6 @@
 package com.ix.ibrahim7.contact_app_assignment.ui.fragment
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -14,9 +13,9 @@ import com.ix.ibrahim7.contact_app_assignment.R
 import com.ix.ibrahim7.contact_app_assignment.adapter.GenericAdapter
 import com.ix.ibrahim7.contact_app_assignment.databinding.FragmentListUserBinding
 import com.ix.ibrahim7.contact_app_assignment.model.User
-import com.ix.ibrahim7.contact_app_assignment.ui.fragment.dialog.AddUserDialog
-import com.ix.ibrahim7.contact_app_assignment.ui.fragment.dialog.LoadingDialog
-import com.ix.ibrahim7.contact_app_assignment.ui.fragment.viewmodel.ListUserViewModel
+import com.ix.ibrahim7.contact_app_assignment.ui.dialog.AddUserDialog
+import com.ix.ibrahim7.contact_app_assignment.ui.dialog.LoadingDialog
+import com.ix.ibrahim7.contact_app_assignment.ui.viewmodel.ListUserViewModel
 import com.ix.ibrahim7.contact_app_assignment.util.Resource
 
 
@@ -93,7 +92,8 @@ class ListUserFragment : Fragment(), AddUserDialog.onClickListener,GenericAdapte
 
 
         mBinding.fabAdd.setOnClickListener {
-            AddUserDialog(this).show(childFragmentManager,"")
+            AddUserDialog(this)
+                .show(childFragmentManager,"")
         }
 
 

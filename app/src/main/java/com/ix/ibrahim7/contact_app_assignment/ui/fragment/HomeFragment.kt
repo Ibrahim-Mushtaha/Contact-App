@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.ix.ibrahim7.contact_app_assignment.BR
 import com.ix.ibrahim7.contact_app_assignment.R
 import com.ix.ibrahim7.contact_app_assignment.adapter.GenericAdapter
@@ -38,18 +39,24 @@ class HomeFragment : Fragment(),GenericAdapter.OnListItemViewClickListener<Categ
             rcCategoryList.adapter = categoryAdapter
         }
 
-
         categoryAdapter.data.clear()
-        categoryAdapter.data.add(Category("Food",R.drawable.ic_food_category))
-        categoryAdapter.data.add(Category("Tool's",R.drawable.ic_tools_category))
-        categoryAdapter.data.add(Category("Technology",R.drawable.ic_game_category))
+        categoryAdapter.data.add(Category(1,"Food",R.drawable.ic_food_category))
+        categoryAdapter.data.add(Category(2,"Tool's",R.drawable.ic_tools_category))
+        categoryAdapter.data.add(Category(3,"Technology",R.drawable.ic_game_category))
         categoryAdapter.notifyDataSetChanged()
 
         super.onViewCreated(view, savedInstanceState)
     }
 
     override fun onClickItem(itemViewModel: Category, type: Int) {
-
+     when(type){
+         1->{
+             val bundle = Bundle().apply {
+                 putInt("id",itemViewModel.id)
+             }
+             findNavController().navigate(R.id.action_homeFragment_to_listProductFragment,bundle)
+         }
+     }
     }
 
 }
