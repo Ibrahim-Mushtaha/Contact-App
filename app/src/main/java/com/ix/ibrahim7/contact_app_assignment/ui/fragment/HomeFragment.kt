@@ -12,6 +12,7 @@ import com.ix.ibrahim7.contact_app_assignment.adapter.GenericAdapter
 import com.ix.ibrahim7.contact_app_assignment.databinding.FragmentHomeBinding
 import com.ix.ibrahim7.contact_app_assignment.databinding.FragmentListUserBinding
 import com.ix.ibrahim7.contact_app_assignment.model.Category
+import com.ix.ibrahim7.contact_app_assignment.other.*
 
 
 class HomeFragment : Fragment(),GenericAdapter.OnListItemViewClickListener<Category> {
@@ -40,9 +41,9 @@ class HomeFragment : Fragment(),GenericAdapter.OnListItemViewClickListener<Categ
         }
 
         categoryAdapter.data.clear()
-        categoryAdapter.data.add(Category(1,"Food",R.drawable.ic_food_category))
-        categoryAdapter.data.add(Category(2,"Tool's",R.drawable.ic_tools_category))
-        categoryAdapter.data.add(Category(3,"Technology",R.drawable.ic_game_category))
+        categoryAdapter.data.add(Category(1, FOOD,R.drawable.ic_test_img2))
+        categoryAdapter.data.add(Category(2, TOOLS,R.drawable.ic_test_img1))
+        categoryAdapter.data.add(Category(3, TECHNOLOGY,R.drawable.ic_test_img2))
         categoryAdapter.notifyDataSetChanged()
 
         super.onViewCreated(view, savedInstanceState)
@@ -52,7 +53,7 @@ class HomeFragment : Fragment(),GenericAdapter.OnListItemViewClickListener<Categ
      when(type){
          1->{
              val bundle = Bundle().apply {
-                 putInt("id",itemViewModel.id)
+                 putInt(ID,itemViewModel.id)
              }
              findNavController().navigate(R.id.action_homeFragment_to_listProductFragment,bundle)
          }

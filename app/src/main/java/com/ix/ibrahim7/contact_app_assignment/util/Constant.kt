@@ -5,6 +5,7 @@ import android.R.id
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
@@ -35,5 +36,6 @@ object Constant {
                 val imageView = view as ImageView
                imageView.setImageResource(value as Int)
     }
+
 
 }
