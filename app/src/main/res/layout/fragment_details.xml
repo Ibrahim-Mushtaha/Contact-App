@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
@@ -11,6 +12,59 @@
         android:layout_height="match_parent"
         tools:context=".ui.fragment.DetailsFragment">
 
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/txtUsername"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16sp"
+            android:layout_marginTop="24sp"
+            android:ellipsize="end"
+            android:lines="1"
+            android:maxLines="1"
+            android:layout_marginEnd="16sp"
+            android:textColor="#3F51B5"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toStartOf="@+id/rating"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView"
+            tools:text="username" />
+
+
+        <TextView
+            android:id="@+id/txtAbout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8sp"
+            android:textColor="#989898"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@+id/rating"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/txtUsername"
+            app:layout_constraintTop_toBottomOf="@+id/txtUsername"
+            tools:text="username" />
+
+        <TextView
+            android:id="@+id/rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:ellipsize="end"
+            android:textColor="#989898"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/txtUsername"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/txtUsername"
+            tools:text="username" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
