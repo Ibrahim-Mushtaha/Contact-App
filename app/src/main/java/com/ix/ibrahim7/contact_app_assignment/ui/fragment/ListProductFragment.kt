@@ -26,9 +26,7 @@ class ListProductFragment : Fragment(),GenericAdapter.OnListItemViewClickListene
     }
 
     private val productAdapter by lazy {
-        GenericAdapter(
-            R.layout.item_product,
-            BR.product,this)
+        GenericAdapter(R.layout.item_product, BR.product,this)
     }
 
     override fun onCreateView(
