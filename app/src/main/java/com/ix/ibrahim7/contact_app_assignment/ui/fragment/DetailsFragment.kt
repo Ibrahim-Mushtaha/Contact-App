@@ -6,11 +6,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.ix.ibrahim7.contact_app_assignment.databinding.FragmentDetailsBinding
+import com.ix.ibrahim7.contact_app_assignment.model.Product
+import com.ix.ibrahim7.contact_app_assignment.other.PRODUCT
 
 
 class DetailsFragment : Fragment() {
 
     private lateinit var mBinding: FragmentDetailsBinding
+
+    private val productDetails by lazy {
+        requireArguments().getParcelable<Product>(PRODUCT)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -23,7 +29,7 @@ class DetailsFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-
+        mBinding.product = productDetails
 
 
 

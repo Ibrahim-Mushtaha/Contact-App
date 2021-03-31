@@ -13,7 +13,7 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.ix.ibrahim7.contact_app_assignment.ui.fragment.HomeFragment"
-        android:label="fragment_home">
+        android:label="Home">
         <action
             android:id="@+id/action_homeFragment_to_listProductFragment"
             app:destination="@id/listProductFragment" />
@@ -21,7 +21,7 @@
     <fragment
         android:id="@+id/listProductFragment"
         android:name="com.ix.ibrahim7.contact_app_assignment.ui.fragment.ListProductFragment"
-        android:label="fragment_list_product" >
+        android:label="All Product">
         <action
             android:id="@+id/action_listProductFragment_to_detailsFragment"
             app:destination="@id/detailsFragment"
@@ -33,6 +33,6 @@
     <fragment
         android:id="@+id/detailsFragment"
         android:name="com.ix.ibrahim7.contact_app_assignment.ui.fragment.DetailsFragment"
-        android:label="fragment_details"
+        android:label="Details Page"
         tools:layout="@layout/fragment_details" />
 </navigation>
