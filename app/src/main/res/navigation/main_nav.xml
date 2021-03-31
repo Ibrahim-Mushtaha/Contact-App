@@ -21,5 +21,18 @@
     <fragment
         android:id="@+id/listProductFragment"
         android:name="com.ix.ibrahim7.contact_app_assignment.ui.fragment.ListProductFragment"
-        android:label="fragment_list_product" />
+        android:label="fragment_list_product" >
+        <action
+            android:id="@+id/action_listProductFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment"
+            app:enterAnim="@anim/slide_up"
+            app:exitAnim="@anim/slide_down"
+            app:popEnterAnim="@anim/slide_up"
+            app:popExitAnim="@anim/slide_down" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="com.ix.ibrahim7.contact_app_assignment.ui.fragment.DetailsFragment"
+        android:label="fragment_details"
+        tools:layout="@layout/fragment_details" />
 </navigation>
