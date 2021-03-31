@@ -21,15 +21,6 @@ import kotlin.math.round
 
 object Constant {
 
-   /* fun Activity.trackScreen(screenName:String,id:String,name:String,image:String){
-        val bundle = Bundle().apply {
-            putString(FirebaseAnalytics.Param.ITEM_ID,id)
-            putString(FirebaseAnalytics.Param.ITEM_NAME, name)
-            putString(FirebaseAnalytics.Param.CONTENT_TYPE, image)
-        }
-        FirebaseAnalytics.getInstance(this).logEvent(FirebaseAnalytics.Event.SELECT_CONTENT, bundle)
-    }*/
-
     fun Activity.trackScreen(screenName:String,key: String, data:String) {
         val bundle = Bundle().apply {
             putString(key, data)
