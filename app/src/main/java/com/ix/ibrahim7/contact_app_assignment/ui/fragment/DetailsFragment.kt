@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import com.ix.ibrahim7.contact_app_assignment.databinding.FragmentDetailsBinding
 import com.ix.ibrahim7.contact_app_assignment.model.Product
 import com.ix.ibrahim7.contact_app_assignment.other.PRODUCT
+import com.ix.ibrahim7.contact_app_assignment.util.Constant.trackScreen
 
 
 class DetailsFragment : Fragment() {
@@ -30,8 +31,7 @@ class DetailsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         mBinding.product = productDetails
-
-
+        requireActivity().trackScreen("DetailsFragment","Details",productDetails!!.name)
 
 
         super.onViewCreated(view, savedInstanceState)

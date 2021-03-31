@@ -7,11 +7,13 @@ import android.app.Activity
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.os.Bundle
+import android.os.Parcelable
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.databinding.BindingAdapter
 import com.google.firebase.analytics.FirebaseAnalytics
+import com.ix.ibrahim7.contact_app_assignment.util.Constant.trackScreen
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.math.round
@@ -19,15 +21,21 @@ import kotlin.math.round
 
 object Constant {
 
-    fun Activity.trackScreen(screenName:String,id:String,name:String,image:String){
+   /* fun Activity.trackScreen(screenName:String,id:String,name:String,image:String){
         val bundle = Bundle().apply {
             putString(FirebaseAnalytics.Param.ITEM_ID,id)
             putString(FirebaseAnalytics.Param.ITEM_NAME, name)
             putString(FirebaseAnalytics.Param.CONTENT_TYPE, image)
         }
         FirebaseAnalytics.getInstance(this).logEvent(FirebaseAnalytics.Event.SELECT_CONTENT, bundle)
-    }
+    }*/
 
+    fun Activity.trackScreen(screenName:String,key: String, data:String) {
+        val bundle = Bundle().apply {
+            putString(key, data)
+        }
+        FirebaseAnalytics.getInstance(this).logEvent(screenName, bundle)
+    }
 
     @SuppressLint("SetTextI18n")
     @JvmStatic

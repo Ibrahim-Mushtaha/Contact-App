@@ -13,6 +13,7 @@ import com.ix.ibrahim7.contact_app_assignment.databinding.FragmentHomeBinding
 import com.ix.ibrahim7.contact_app_assignment.databinding.FragmentListUserBinding
 import com.ix.ibrahim7.contact_app_assignment.model.Category
 import com.ix.ibrahim7.contact_app_assignment.other.*
+import com.ix.ibrahim7.contact_app_assignment.util.Constant.trackScreen
 
 
 class HomeFragment : Fragment(),GenericAdapter.OnListItemViewClickListener<Category> {
@@ -52,6 +53,7 @@ class HomeFragment : Fragment(),GenericAdapter.OnListItemViewClickListener<Categ
     override fun onClickItem(itemViewModel: Category, type: Int) {
      when(type){
          1->{
+             requireActivity().trackScreen("Home Page","categories",itemViewModel.titte!!)
              val bundle = Bundle().apply {
                  putInt(ID,itemViewModel.id)
              }

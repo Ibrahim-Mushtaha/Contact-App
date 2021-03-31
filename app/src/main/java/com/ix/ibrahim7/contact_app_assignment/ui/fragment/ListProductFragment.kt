@@ -13,6 +13,7 @@ import com.ix.ibrahim7.contact_app_assignment.databinding.FragmentListProductBin
 import com.ix.ibrahim7.contact_app_assignment.model.Product
 import com.ix.ibrahim7.contact_app_assignment.other.ID
 import com.ix.ibrahim7.contact_app_assignment.other.PRODUCT
+import com.ix.ibrahim7.contact_app_assignment.util.Constant.trackScreen
 
 
 class ListProductFragment : Fragment(),GenericAdapter.OnListItemViewClickListener<Product> {
@@ -46,15 +47,15 @@ class ListProductFragment : Fragment(),GenericAdapter.OnListItemViewClickListene
         when(argID){
             1->{
                 productAdapter.data.add(Product(1,1,"Food 1",getString(R.string.long_text),4F,R.drawable.ic_test_img1))
-                productAdapter.data.add(Product(1,1,"Food 2",getString(R.string.long_text),4F,R.drawable.ic_test_img2))
+                productAdapter.data.add(Product(1,1,"Food 2",getString(R.string.long_text),5F,R.drawable.ic_test_img2))
             }
             2->{
-                productAdapter.data.add(Product(2,2,"Tool 1",getString(R.string.long_text),4F,R.drawable.ic_test_img1))
-                productAdapter.data.add(Product(2,2,"Tool 2",getString(R.string.long_text),4F,R.drawable.ic_test_img2))
+                productAdapter.data.add(Product(2,2,"Tool 1",getString(R.string.long_text),3F,R.drawable.ic_test_img1))
+                productAdapter.data.add(Product(2,2,"Tool 2",getString(R.string.long_text),5F,R.drawable.ic_test_img2))
             }
             3->{
                 productAdapter.data.add(Product(2,2,"Game 1",getString(R.string.long_text),4F,R.drawable.ic_test_img1))
-                productAdapter.data.add(Product(2,2,"Game 2",getString(R.string.long_text),4F,R.drawable.ic_test_img2))
+                productAdapter.data.add(Product(2,2,"Game 2",getString(R.string.long_text),2F,R.drawable.ic_test_img2))
             }
         }
 
@@ -71,6 +72,7 @@ class ListProductFragment : Fragment(),GenericAdapter.OnListItemViewClickListene
     override fun onClickItem(itemViewModel: Product, type: Int) {
         when(type){
             1->{
+                requireActivity().trackScreen("ListProductFragment","Product",itemViewModel.name)
                 val bundle = Bundle().apply {
                     putParcelable(PRODUCT,itemViewModel)
                 }
