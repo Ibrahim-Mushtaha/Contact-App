@@ -53,7 +53,7 @@ class HomeFragment : Fragment(),GenericAdapter.OnListItemViewClickListener<Categ
     override fun onClickItem(itemViewModel: Category, type: Int) {
      when(type){
          1->{
-             requireActivity().trackScreen("Home Page","categories",itemViewModel.titte!!)
+             requireActivity().trackScreen("Home Page","categories",itemViewModel.title!!)
              val bundle = Bundle().apply {
                  putInt(ID,itemViewModel.id)
              }
